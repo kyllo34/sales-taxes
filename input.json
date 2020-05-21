@@ -1,0 +1,82 @@
+{
+  "input": [
+    {
+      "id": 1,
+      "items": [
+        {
+          "description": "book",
+          "category": "book",
+          "quantity": 1,
+          "cost": 12.49,
+          "imported": false
+        },
+        {
+          "description": "music CD",
+          "category": "good",
+          "quantity": 1,
+          "cost": 14.99,
+          "imported": false
+        },
+        {
+          "description": "chocolate bar",
+          "category": "food",
+          "quantity": 1,
+          "cost": 0.85,
+          "imported": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "items": [
+        {
+          "description": "box of chocolates",
+          "category": "food",
+          "quantity": 1,
+          "cost": 10.00,
+          "imported": true
+        },
+        {
+          "description": "bottle of perfume",
+          "category": "good",
+          "quantity": 1,
+          "cost": 47.50,
+          "imported": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "items": [
+        {
+          "description": "bottle of perfume",
+          "category": "good",
+          "quantity": 1,
+          "cost": 27.99,
+          "imported": true
+        },
+        {
+          "description": "bottle of perfume",
+          "category": "good",
+          "quantity": 1,
+          "cost": 14.99,
+          "imported": false
+        },
+        {
+          "description": "bottle of headache pills",
+          "category": "medical",
+          "quantity": 1,
+          "cost": 9.75,
+          "imported": false
+        },
+        {
+          "description": "box of chocolates",
+          "category": "food",
+          "quantity": 1,
+          "cost": 11.25,
+          "imported": true
+        }
+      ]
+    }
+  ]
+}
