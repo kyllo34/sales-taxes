@@ -1,4 +1,3 @@
-"use strict";
 // Dependencies
 const fs = require("fs");
 // import taxBracket lookup from config.js
