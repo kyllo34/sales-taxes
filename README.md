@@ -2,7 +2,7 @@
 
 ## Instructions:
 - `input.json` contains an array of basket objects that can be modified and added to.
-- The input property represents an array of basket object each with their unique id and an array of items
+- The input property represents an array of basket objects, each with a unique id and an array of items
 - Each item requires a description, category which determines its tax bracket, quantity, cost, and an imported property which determines if the item will have a tariff applied to it.
 - Run `node index.js` in the command line to run app.
 - The output will be written to `output.json`
