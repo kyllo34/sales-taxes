@@ -1,7 +1,7 @@
 # sales-taxes
 
 ## Instructions:
-- `input.json` contains an array basket objects that can be modified and added to.
+- `input.json` contains an array of basket objects that can be modified and added to.
 - Run `node index.js` in the command line to run app.
 - The output will be written to `output.json`
 
