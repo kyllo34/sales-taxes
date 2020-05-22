@@ -12,7 +12,7 @@
         },
         {
           "description": "music CD",
-          "category": "good",
+          "category": "goods",
           "quantity": 1,
           "cost": 14.99,
           "imported": false
@@ -38,7 +38,7 @@
         },
         {
           "description": "bottle of perfume",
-          "category": "good",
+          "category": "goods",
           "quantity": 1,
           "cost": 47.50,
           "imported": true
@@ -50,20 +50,20 @@
       "items": [
         {
           "description": "bottle of perfume",
-          "category": "good",
+          "category": "goods",
           "quantity": 1,
           "cost": 27.99,
           "imported": true
         },
         {
           "description": "bottle of perfume",
-          "category": "good",
+          "category": "goods",
           "quantity": 1,
-          "cost": 14.99,
+          "cost": 18.99,
           "imported": false
         },
         {
-          "description": "bottle of headache pills",
+          "description": "packet of headache pills",
           "category": "medical",
           "quantity": 1,
           "cost": 9.75,
