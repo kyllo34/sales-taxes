@@ -16,10 +16,8 @@ salesTax(data.input);
 function salesTax(baskets) {
   // baskets.map will return a new output object to be written to output.json
   const output = baskets.map((basket) => {
-    // Define newBasket to be a new object containing the basket id and the spread of the return objects from receipt handler which are the modified items array and the summary object
-    const newBasket = { id: basket.id, ...createReceipt(basket.items) };
-    // Return the new Object to the output array
-    return newBasket;
+    // Return a new object containing the basket id and the spread of the return objects from receipt handler which are the modified items array and the summary object
+    return { id: basket.id, ...createReceipt(basket.items) };
   });
   // Write output object(receipt) to output.json
   fs.writeFileSync("output.json", JSON.stringify(output));
@@ -34,25 +32,20 @@ function createReceipt(items) {
     // I Define itemSalesTax to be the return of calculateSalesTax
     let itemSalesTax = calculateSalesTax(item);
     // Add itemSalesTax to salesTax
-    summary["salesTax"] += itemSalesTax;
+    summary.salesTax += itemSalesTax;
     // Define newCost to get cost of item including tax
     let newCost = item.cost + itemSalesTax;
     // Add item tax and cost to Total
-    summary["total"] += newCost;
+    summary.total += newCost;
     // Remove decimals past the 100th place, returns a string
     newCost = newCost.toFixed(2);
     // Return new modified object
     return { ...item, cost: newCost };
   });
-
-  round2Dec(summary);
-  // Remove decimals past the 100th place for the sales tax and total and round up, returns a string
-  summary["salesTax"] = (Math.round(summary["salesTax"] * 100) / 100).toFixed(
-    2
-  );
-  summary["total"] = (Math.round(summary["total"] * 100) / 100).toFixed(2);
+  // Defines newSummary to be the return of round2Dec that rounds summary values to the nearest 100th place and returns the object
+  let basketSummary = round2Dec(summary);
   // Return receipt and summary objects
-  return { items: receipt, summary };
+  return { items: receipt, basketSummary };
 }
 
 // Declare function that accepts an item to determine the sales tax to be applied
@@ -82,6 +75,6 @@ function round2Dec(summary) {
     },
     { ...summary }
   );
-  
-  console.log(roundedSummary);
+
+  return roundedSummary;
 }

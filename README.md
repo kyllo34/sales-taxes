@@ -2,8 +2,15 @@
 
 ## Instructions:
 - `input.json` contains an array of basket objects that can be modified and added to.
+- The input property represents an array of basket object each with their unique id and an array of items
+- Each item requires a description, category which determines its tax bracket, quantity, cost, and an imported property which determines is the item will have a tariff applied to it.
 - Run `node index.js` in the command line to run app.
 - The output will be written to `output.json`
+
+## Approach
+- Based on the open nature of the prompt I decided to construct the input as a JSON object stored in an input.json file which is read using Node's fs library
+- I created a config.js file to contain the tax bracket object and import tax constant so that the application can adapt to any changes in import, standard, or exempt taxing.
+- For the input I chose to create a category and imported property to make the tax calculation easier.
 
 ## Problem Domain:
 SALES TAXES
