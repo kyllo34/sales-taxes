@@ -6,7 +6,7 @@
         {
           "description": "book",
           "category": "book",
-          "quantity": 1,
+          "quantity": 2,
           "cost": 12.49,
           "imported": false
         },

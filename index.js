@@ -5,7 +5,7 @@ const { taxBracket, importTax } = require("./config");
 
 // Retrieve raw data from items.json file
 let raw = fs.readFileSync("input.json");
-// Parses raw data and parses to JSON data in JavaScript object
+// Parses raw data to JSON data in JavaScript object
 let data = JSON.parse(raw);
 
 // Execute salesTax function with input from input.json
@@ -31,11 +31,11 @@ function createReceipt(items) {
     // I Define itemSalesTax to be the return of calculateSalesTax
     let itemSalesTax = calculateSalesTax(item);
     // Add itemSalesTax to salesTax
-    summary.salesTax += itemSalesTax;
+    summary.salesTax += itemSalesTax * item.quantity;
     // Define newCost to get cost of item including tax
     let newCost = item.cost + itemSalesTax;
-    // Add item tax and cost to Total
-    summary.total += newCost;
+    // Add item tax and cost multiplied by its quantity to Total
+    summary.total += newCost * item.quantity;
     // Remove decimals past the 100th place, returns a string
     newCost = newCost.toFixed(2);
     // Return new modified object
@@ -60,6 +60,8 @@ function calculateSalesTax(item) {
 }
 
 // Declare function that returns the summary object but with its values rounded to the 100s
+// This function was created to account for rounding errors for numbers whose value cannot be represented exactly in binary
+//  i.e. 14.99 + 1.5 = 16.490000000000002 => 16.49
 function round2Dec(summary) {
   // Defined roundedSummary to be copy of summary as to avoid mutation
   let roundedSummary = Object.keys(summary).reduce(
